@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
+import 'package:instagram_clone/components/stories/stories.dart';
 
 import 'components/bottom_nav_bar.dart';
 
@@ -45,6 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
             pageIndex = value;
           });
         },
+      ),
+      body: Column(
+        children: [
+          Stories(),
+        ],
       ),
     );
   }
