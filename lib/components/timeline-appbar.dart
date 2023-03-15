@@ -3,13 +3,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/components/custom_icon_button.dart';
 
-class TimelineAppbar extends StatelessWidget {
+class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {
   const TimelineAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
+    return AppBar(
       backgroundColor: Colors.black,
       title: Padding(
         padding: const EdgeInsets.only(top: 25.0),
@@ -29,6 +28,10 @@ class TimelineAppbar extends StatelessWidget {
           onPressed: () {},
         ),
       ],
-    ));
+    );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(65);
 }
