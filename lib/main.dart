@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/timeline-appbar.dart';
 
 import 'component/bottom_nav_bar.dart';
 
@@ -35,9 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: TimelineAppbar(),
       bottomNavigationBar: BottomNavBarWidget(
         pageIndex: pageIndex,
         onTap: (value) {
