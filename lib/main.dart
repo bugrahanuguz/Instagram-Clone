@@ -36,9 +36,6 @@ class MyApp extends StatelessWidget {
 
         home: AppInit(),
 
-        home: AppInit(
-        ),
-
       ),
     );
   }

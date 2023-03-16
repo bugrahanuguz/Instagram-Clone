@@ -24,22 +24,13 @@ class AppInit extends StatelessWidget {
         size: 200,
       ),
       screenFunction: () async {
-
         await context.read<TimelineViewModel>().getListData();
         return HomeScreen();
       },
-      curve: Curves.bounceInOut,
-      splashIconSize: 300,
-
-        await context
-            .read<TimelineViewModel>()
-            .getListData();
-        return MyHomePage();
-      },
+     
       curve: Curves.bounceInOut,
       splashIconSize: 300,
       duration: 200,
-
       splashTransition: SplashTransition.rotationTransition,
       pageTransitionType: PageTransitionType.fade,
     );

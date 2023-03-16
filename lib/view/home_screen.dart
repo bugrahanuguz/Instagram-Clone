@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget get screen {
     switch (context.watch<HomePageViewModel>().page) {
       case 0:
-        return const MyHomePage();
+        return MyHomePage();
       case 1:
         return DiscoveryScreen();
       default:
