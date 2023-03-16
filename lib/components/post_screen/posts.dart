@@ -23,8 +23,6 @@ class Posts extends StatelessWidget {
           ],
         ),
         bottom_post(),
-        
-
       ],
     );
   }
@@ -43,8 +41,8 @@ Widget bottom_post(){
               RichText(
                 text: TextSpan(
                   children: const <TextSpan>[
-                    TextSpan(text: 'User ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'lorem ipsum gibi bir açıklama'),
+                    TextSpan(text: 'User', style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: ' world!'),
                   ],
                 ),
               )

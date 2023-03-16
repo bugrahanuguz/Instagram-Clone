@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/custom_icon_button.dart';
+import 'package:instagram_clone/view/chat_screen.dart';
 
 class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {
   const TimelineAppbar({super.key});
@@ -23,7 +24,9 @@ class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         CustomIconButton(
           icon: "assets/icons/message.png",
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+          },
         ),
       ],
     );
