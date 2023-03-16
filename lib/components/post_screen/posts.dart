@@ -3,15 +3,22 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/components/post_screen/post_bottom_icons.dart';
 import 'package:instagram_clone/components/post_screen/post_image.dart';
+import 'package:instagram_clone/models/post_model.dart';
 
-class Posts extends StatelessWidget {
-  const Posts({super.key});
+class Posts extends StatefulWidget {
+  PostModel? post;
+  Posts({super.key, required this.post});
 
+  @override
+  State<Posts> createState() => _PostsState();
+}
+
+class _PostsState extends State<Posts> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        PostImage(),
+        PostImage(post: widget.post),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -22,13 +29,14 @@ class Posts extends StatelessWidget {
             PostIconBottom(icon_path_post: 'assets/icons/save_post.png',),
           ],
         ),
-        bottom_post(),
+        bottom_post(widget.post!.username),
       ],
     );
   }
 }
 
-Widget bottom_post(){
+Widget bottom_post(String username){
+  var userNmae = username;
   return Padding(
     padding: EdgeInsets.only(left: 10),
     child: Column(
@@ -40,8 +48,8 @@ Widget bottom_post(){
             children: [
               RichText(
                 text: TextSpan(
-                  children: const <TextSpan>[
-                    TextSpan(text: 'User', style: TextStyle(fontWeight: FontWeight.bold)),
+                  children: <TextSpan>[
+                    TextSpan(text: userNmae, style: TextStyle(fontWeight: FontWeight.bold)),
                     TextSpan(text: ' world!'),
                   ],
                 ),

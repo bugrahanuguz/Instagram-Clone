@@ -26,8 +26,8 @@ class PostModel {
     return PostModel(
         id: faker.randomGenerator.integer(1000),
         username: faker.internet.userName(),
-        userAvatar: faker.image.image(),
-        media: faker.image.image(),
+        userAvatar: faker.image.image(random: true),
+        media: faker.image.image(random: true),
         mediaType: "image",
         likeCount: faker.randomGenerator.integer(1000),
         content: faker.lorem.sentence());

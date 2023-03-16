@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/app_init.dart';
 
 import 'package:instagram_clone/components/post_screen/posts.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
@@ -28,8 +29,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: MyHomePage(
-          title: '',
+        home: AppInit(
         ),
       ),
     );
