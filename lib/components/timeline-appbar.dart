@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/components/custom_icon_button.dart';
 
 class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {

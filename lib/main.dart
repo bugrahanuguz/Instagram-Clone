@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/chat_screen/chat_screen.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
 import 'package:instagram_clone/components/stories/stories.dart';
+import 'package:instagram_clone/view_models/home_page_view_model.dart';
+import 'package:instagram_clone/view_models/timeline_view_model.dart';
+import 'package:provider/provider.dart';
 
 import 'components/bottom_nav_bar.dart';
 
@@ -13,11 +17,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: const MyHomePage(title: 'Instagram Clone'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => HomePageViewModel()),
+        ChangeNotifierProvider(create: (context) => TimelineViewModel())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(),
+        home: MyHomePage(
+          title: '',
+        ),
+      ),
     );
   }
 }
@@ -39,14 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: TimelineAppbar(),
-      bottomNavigationBar: BottomNavBarWidget(
-        pageIndex: pageIndex,
-        onTap: (value) {
-          setState(() {
-            pageIndex = value;
-          });
-        },
-      ),
+      bottomNavigationBar: BottomNavBarWidget(),
       body: Column(
         children: [
           Stories(),
