@@ -10,6 +10,7 @@ class TimelineViewModel extends ChangeNotifier {
     await Future.delayed(Duration(seconds: 2));
     for (var i = 0; i < count; i++) {
       posts.add(PostModel.fake());
+      print("object");
     }
     notifyListeners();
   }

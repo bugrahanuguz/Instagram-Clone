@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:instagram_clone/models/post_model.dart';
 
 class PostTextRow extends StatelessWidget {
   final String? name_of_post_own;
-  const PostTextRow({super.key, required this.name_of_post_own});
+  final PostModel post;
+  const PostTextRow({super.key, required this.name_of_post_own, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +18,13 @@ class PostTextRow extends StatelessWidget {
         child: Row(
           children: [
                 Container(
+                      height: MediaQuery.of(context).size.height * 0.04,
+                      width: MediaQuery.of(context).size.height * 0.04,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       border: Border.all(color: Colors.red, width: 3)),
                   child: ClipOval(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                      ),
-                    ),
+                    child: Image.network(post.userAvatar,fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(width: 5,),
