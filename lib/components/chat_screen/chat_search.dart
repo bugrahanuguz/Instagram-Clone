@@ -5,9 +5,15 @@ class ChatSearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+    return Container(
+      padding: EdgeInsets.all(15),
+      height: MediaQuery.of(context).size.height * 0.08,
+      child: TextField(
+        decoration: InputDecoration(
+            hintText: "Ara",
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+      ),
     );
   }
 }
