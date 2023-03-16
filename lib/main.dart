@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/post_screen/posts.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
 import 'package:instagram_clone/components/stories/stories.dart';
 
@@ -49,7 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Stories(),
+          Expanded(
+            child: ListView(
+            children: [
+            Stories(),
+            Posts(),
+            Posts(),
+            Posts(),
+            Posts(),
+            Posts(),
+            ],
+          ),
+          )
         ],
       ),
     );
