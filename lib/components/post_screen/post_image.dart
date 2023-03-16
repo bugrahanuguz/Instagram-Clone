@@ -3,9 +3,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/components/post_screen/post_text_row.dart';
 import 'package:instagram_clone/components/stories/horizontal_listview.dart';
+import 'package:instagram_clone/models/post_model.dart';
 
 class PostImage extends StatelessWidget {
-  const PostImage({super.key});
+   PostModel? post;
+   PostImage({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,8 @@ class PostImage extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.99,
       child: Column(
         children: [
-          PostTextRow(name_of_post_own: 'Sami',),
-          Image.asset('assets/images/post_image.png'),
+          PostTextRow(name_of_post_own: post!.username,post: post!,),
+          Image.network(post!.media),
         ],
       )
     );
