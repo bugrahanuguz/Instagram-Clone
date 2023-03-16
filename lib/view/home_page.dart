@@ -7,8 +7,16 @@ import '../components/post_screen/posts.dart';
 import '../components/stories/stories.dart';
 import '../components/timeline-appbar.dart';
 import 'chat_screen.dart';
+
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({
+    super.key,
+  });
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key,});
+
 
 
 
@@ -21,6 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    return GestureDetector(
+        onHorizontalDragEnd: (e) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ChatScreen()));
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: TimelineAppbar(),
@@ -28,11 +42,23 @@ class _MyHomePageState extends State<MyHomePage> {
       body: GestureDetector(
         onHorizontalDragEnd: (et) {
            Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+
         },
         child: Column(
           children: [
             Expanded(
               child: ListView(
+
+                children: [
+                  Stories(),
+                  Posts(),
+                  Posts(),
+                  Posts(),
+                  Posts(),
+                  Posts(),
+                ],
+              ),
+
               children: [
               Stories(),
               ...context.watch<TimelineViewModel>().posts.map((e) => Posts(post: e)).toList()
@@ -43,10 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
               // Posts(),
               ],
             ),
+
             )
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

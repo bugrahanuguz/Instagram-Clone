@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/view/discovery_screen.dart';
+import 'package:instagram_clone/view/home_page.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
-  BottomNavBarWidget({
+  const BottomNavBarWidget({
     super.key,
   });
 
@@ -49,4 +51,5 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   ];
 }
 
+List<Widget> pages = [MyHomePage(), DiscoveryScreen()];
 double size = 26;
