@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/view_models/home_page_view_model.dart';
+import 'package:provider/provider.dart';
 
-class BottomNavBarWidget extends StatelessWidget {
-  final int pageIndex;
-  final Function(int value) onTap;
-  const BottomNavBarWidget(
-      {super.key, required this.pageIndex, required this.onTap});
+class BottomNavBarWidget extends StatefulWidget {
+  BottomNavBarWidget({
+    super.key,
+  });
 
+  @override
+  State<BottomNavBarWidget> createState() => _BottomNavBarWidgetState();
+}
+
+class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabBar(
@@ -14,46 +20,33 @@ class BottomNavBarWidget extends StatelessWidget {
       backgroundColor: Colors.black,
       iconSize: 32,
       items: [
-        BottomNavigationBarItem(
-          icon: Image.asset(
-            'assets/icons/home.png',
-            width: size,
-            height: size,
-          ),
-        ),
-        const BottomNavigationBarItem(
-            icon: Icon(
-          Icons.search,
-          size: 34,
-          color: Colors.white,
-        )),
-        BottomNavigationBarItem(
-          icon: Image.asset(
-            'assets/icons/add.png',
-            width: size,
-            height: size,
-          ),
-        ),
-        BottomNavigationBarItem(
-            icon: Image.asset(
-          'assets/icons/reels.png',
-          width: size,
-          height: size,
-        )),
-        BottomNavigationBarItem(
-          icon: Image.asset(
-            'assets/icons/pp.png',
-            width: size,
-            height: size,
-          ),
-        ),
+        for (int i = 0; i < icons.length; i++)
+          BottomNavigationBarItem(icon: bottomIcon(icons[i], i))
       ],
-      onTap: (value) {
-        onTap(value);
-      },
-      currentIndex: pageIndex,
     );
   }
+
+  Widget bottomIcon(String icon, int index) => GestureDetector(
+        onTap: () {
+          context.read<HomePageViewModel>().setPage(index);
+        },
+        child: Opacity(
+          opacity: context.watch<HomePageViewModel>().page == index ? 1.0 : 0.7,
+          child: Image.asset(
+            icon,
+            width: size,
+            height: size,
+          ),
+        ),
+      );
+
+  List<String> icons = [
+    'assets/icons/home.png',
+    'assets/icons/search.png',
+    'assets/icons/add.png',
+    'assets/icons/reels.png',
+    'assets/icons/pp.png',
+  ];
 }
 
 double size = 26;
