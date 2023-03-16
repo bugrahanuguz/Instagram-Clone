@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/chat_screen/chat_screen.dart';
+import 'package:instagram_clone/components/post_screen/posts.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
 import 'package:instagram_clone/components/stories/stories.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
@@ -54,7 +55,18 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavBarWidget(),
       body: Column(
         children: [
-          Stories(),
+          Expanded(
+            child: ListView(
+            children: [
+            Stories(),
+            Posts(),
+            Posts(),
+            Posts(),
+            Posts(),
+            Posts(),
+            ],
+          ),
+          )
         ],
       ),
     );

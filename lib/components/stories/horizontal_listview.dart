@@ -21,7 +21,7 @@ class Horizontal_Listview extends StatelessWidget {
                 border: Border.all(color: Colors.red, width: 3)),
             child: ClipOval(
               child: Container(
-                height: 60,
+                height: MediaQuery.of(context).size.height * 0.07,
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
