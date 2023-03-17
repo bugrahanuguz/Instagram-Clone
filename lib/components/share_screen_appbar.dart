@@ -8,6 +8,7 @@ class ShareScreenAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.black,
       title: Padding(
         padding: const EdgeInsets.only(top: 25, bottom: 15),
@@ -17,10 +18,15 @@ class ShareScreenAppbar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: Image.asset(
-                "assets/images/cross.png",
-                height: 30,
-                fit: BoxFit.fitHeight,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  "assets/images/cross.png",
+                  height: 30,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
             const Text('New Post',

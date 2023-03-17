@@ -6,6 +6,8 @@ import 'package:instagram_clone/components/profile_screen/profile_posts.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
+import '../view/share_screen.dart';
+
 class BottomNavBarWidget extends StatefulWidget {
   const BottomNavBarWidget({
     super.key,
@@ -31,7 +33,12 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
 
   Widget bottomIcon(String icon, int index) => GestureDetector(
         onTap: () {
-          context.read<HomePageViewModel>().setPage(index);
+          if (index == 2) {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ShareScreenPage()));
+          } else {
+            context.read<HomePageViewModel>().setPage(index);
+          }
         },
         child: Opacity(
           opacity: context.watch<HomePageViewModel>().page == index ? 1.0 : 0.7,
