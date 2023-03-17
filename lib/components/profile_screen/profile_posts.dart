@@ -37,7 +37,7 @@ class _InstagramProfilePageState extends State<InstagramProfilePage> {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       DefaultTabController(
-          initialIndex: 1,
+          initialIndex: 0,
           length: 2,
           child: Column(
             children: [
