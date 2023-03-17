@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:instagram_clone/components/discovery_appbar.dart';
 
-import '../components/bottom_nav_bar.dart';
+import 'package:instagram_clone/view_models/discovery_view_model.dart';
+import 'package:provider/provider.dart';
 
-class DiscoveryScreen extends StatefulWidget {
+import '../components/discovery_screen/discovery_postlist.dart';
+import '../components/discovery_screen/discovery_userlist.dart';
+
+class DiscoveryScreen extends StatelessWidget {
   const DiscoveryScreen({super.key});
 
   @override
-  State<DiscoveryScreen> createState() => _DiscoveryScreenState();
-}
-
-class _DiscoveryScreenState extends State<DiscoveryScreen> {
-  int pageIndex = 1;
-  @override
   Widget build(BuildContext context) {
-    return Text(
-      "Discovery",
-      style: TextStyle(color: Colors.white),
+    return Container(
+      child: !context.watch<DiscoveryViewModel>().searchView
+          ? DiscoveryGrid()
+          : DiscoveryUserList(),
     );
   }
 }

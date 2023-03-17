@@ -9,7 +9,8 @@ import 'package:instagram_clone/view/profile_screen.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
-import '../components/discovery_appbar.dart';
+import '../components/discovery_screen/discovery_appbar.dart';
+import '../components/profile_screen/profile_appbar.dart';
 import '../components/profile_screen/profile_stories.dart';
 import '../components/timeline-appbar.dart';
 import 'home_page.dart';
@@ -37,9 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return const TimelineAppbar();
       case 1:
-        return const DiscoveryAppBar();
+        return const DiscoveryAppbar();
       case 4:
-        return const ChatScreenAppBar();
+        return const ProfileAppbar();
       default:
         return null;
     }
