@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/bottom_nav_bar.dart';
 import 'package:instagram_clone/components/chat_screen/chat_screen_appbar.dart';
 import 'package:instagram_clone/components/profile_screen/profile.dart';
+import 'package:instagram_clone/components/share_screen_appbar.dart';
 import 'package:instagram_clone/view/discovery_screen.dart';
 import 'package:instagram_clone/components/profile_screen/profile_posts.dart';
 import 'package:instagram_clone/view/profile_screen.dart';
+import 'package:instagram_clone/view/share_screen.dart';
 
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
@@ -39,6 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
         return const TimelineAppbar();
       case 1:
         return const DiscoveryAppbar();
+      case 2:
+        return const ShareScreenAppbar();
+
       case 4:
         return const ProfileAppbar();
       default:
@@ -52,6 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
         return MyHomePage();
       case 1:
         return DiscoveryScreen();
+      case 2:
+        return ShareScreenPage();
+      case 3:
+        return const ReelsPageView();
       case 4:
         return ProfileScreenPage();
       default:
