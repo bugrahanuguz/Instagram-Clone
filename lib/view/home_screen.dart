@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
      
       case 3:
-         return const ReelsPageView();
+         return ReelsPageView();
 
       case 4:
         return ProfileScreenPage();

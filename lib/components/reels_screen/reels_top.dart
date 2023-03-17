@@ -8,25 +8,25 @@ class ReelsTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-              padding: EdgeInsets.only(
-                left: 20,
-                right: 20,
-                top: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Reels',
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  ),
-                  Icon(
-                    Icons.camera_alt_outlined,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                ],
-              ),
-            );
+      padding: EdgeInsets.only(
+        left: 20,
+        right: 20,
+        top: MediaQuery.of(context).size.height * 0.08,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Reels',
+            style: TextStyle(color: Colors.white, fontSize: 22),
+          ),
+          Icon(
+            Icons.camera_alt_outlined,
+            color: Colors.white,
+            size: 30,
+          ),
+        ],
+      ),
+    );
   }
 }
