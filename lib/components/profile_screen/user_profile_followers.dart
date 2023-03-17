@@ -18,7 +18,7 @@ class Followers extends StatelessWidget {
         ),
         Text(
           text.toString(),
-          style: TextStyle(color: Colors.white, fontSize: 12),
+          style: TextStyle(color: Colors.white, fontSize: 14),
         )
       ],
     );
