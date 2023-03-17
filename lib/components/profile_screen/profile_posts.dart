@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'grid_view_tabs.dart';
+import 'grid_view_widget.dart';
+
 class InstagramProfilePage extends StatefulWidget {
   @override
   State<InstagramProfilePage> createState() => _InstagramProfilePageState();
 }
 
 class _InstagramProfilePageState extends State<InstagramProfilePage> {
-  final List<String> _imageUrls = [
+  final List<String> imageUrls = [
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
@@ -23,7 +26,7 @@ class _InstagramProfilePageState extends State<InstagramProfilePage> {
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
   ];
-  final List<String> _imageUrls2 = [
+  final List<String> imageUrls2 = [
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
@@ -38,64 +41,17 @@ class _InstagramProfilePageState extends State<InstagramProfilePage> {
           length: 2,
           child: Column(
             children: [
-              TabBar(
-                padding: EdgeInsets.only(bottom: 3),
-                indicatorColor: Colors.white,
-                tabs: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Image.asset(
-                      'assets/images/photos.png',
-                      height: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Image.asset(
-                      'assets/images/tags.png',
-                      height: 25,
-                    ),
-                  )
-                ],
-              ),
+              GridViewTabs(),
               SizedBox(
                 height: MediaQuery.of(context).size.height,
                 child: TabBarView(
                   children: [
-                    GridView.count(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 4,
-                      mainAxisSpacing: 4,
-                      children: _imageUrls.map((url) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(url),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        );
-                      }).toList(),
+                    GridViewWidget(
+                      image_path: imageUrls,
                     ),
-                    GridView.count(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 4,
-                      mainAxisSpacing: 4,
-                      children: _imageUrls2.map((url) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(url),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                    GridViewWidget(
+                      image_path: imageUrls2,
+                    )
                   ],
                 ),
               ),
