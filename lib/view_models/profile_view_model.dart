@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-mixin ProfileViewModel
-    implements ChangeNotifier, TickerProviderStateMixin<StatefulWidget> {
-  late TabController tabController;
-  changeTabBar() {
-    initState();
-    tabController = TabController(length: 3, vsync: this);
+class ProfileViewModel extends ChangeNotifier {
+  int page = 0;
+
+  setPage(int p) {
+    page = p;
+    notifyListeners();
   }
 }
