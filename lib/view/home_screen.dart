@@ -43,8 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return const DiscoveryAppBar();
       //case 2:
       //return const ShareScreenAppbar();
-      case 3:
-        return const ChatScreenAppBar();
+
       case 4:
         return const ChatScreenAppBar();
       default:
