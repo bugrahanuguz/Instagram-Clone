@@ -6,6 +6,7 @@ import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
 import '../components/discovery_appbar.dart';
+import '../components/profile_stories.dart';
 import '../components/timeline-appbar.dart';
 import 'home_page.dart';
 
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return DiscoveryScreen();
       default:
-        return Container();
+        return ProfileStoriesWidget();
     }
   }
 }
