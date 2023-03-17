@@ -56,12 +56,12 @@ class _HomeScreenState extends State<HomeScreen> {
         return MyHomePage();
       case 1:
         return DiscoveryScreen();
-        case 2:
+      case 2:
         return ShareScreenPage();
-        case 3:
-        
-        return const ReelsPageView()
-      case 4:
+      case 3:
+
+        //   return const ReelsPageView()
+        // case 4:
         return ProfileScreenPage();
       default:
         return ProfileStoriesWidget();
