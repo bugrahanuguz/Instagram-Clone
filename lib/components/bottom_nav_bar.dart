@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/view/discovery_screen.dart';
 import 'package:instagram_clone/view/home_page.dart';
-import 'package:instagram_clone/view/profile_page.dart';
+import 'package:instagram_clone/components/profile_screen/profile_posts.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
