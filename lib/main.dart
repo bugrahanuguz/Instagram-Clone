@@ -8,6 +8,7 @@ import 'package:instagram_clone/components/post_screen/posts.dart';
 import 'package:instagram_clone/components/timeline-appbar.dart';
 import 'package:instagram_clone/components/stories/stories.dart';
 import 'package:instagram_clone/view/home_page.dart';
+import 'package:instagram_clone/view_models/discovery_view_model.dart';
 
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:instagram_clone/view_models/timeline_view_model.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => HomePageViewModel()),
-        ChangeNotifierProvider(create: (context) => TimelineViewModel())
+        ChangeNotifierProvider(create: (context) => TimelineViewModel()),
+        ChangeNotifierProvider(create: (context) => DiscoveryViewModel())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

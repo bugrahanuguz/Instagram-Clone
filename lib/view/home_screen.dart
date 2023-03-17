@@ -11,7 +11,8 @@ import 'package:instagram_clone/view/share_screen.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
-import '../components/discovery_appbar.dart';
+import '../components/discovery_screen/discovery_appbar.dart';
+import '../components/profile_screen/profile_appbar.dart';
 import '../components/profile_screen/profile_stories.dart';
 import '../components/timeline-appbar.dart';
 import 'home_page.dart';
@@ -39,12 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return const TimelineAppbar();
       case 1:
-        return const DiscoveryAppBar();
+        return const DiscoveryAppbar();
       case 2:
         return const ShareScreenAppbar();
 
       case 4:
-        return const ChatScreenAppBar();
+        return const ProfileAppbar();
       default:
         return null;
     }
@@ -56,11 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
         return MyHomePage();
       case 1:
         return DiscoveryScreen();
-        case 2:
+      case 2:
         return ShareScreenPage();
-        case 3:
-        
-        return const ReelsPageView()
+      case 3:
+        return const ReelsPageView();
       case 4:
         return ProfileScreenPage();
       default:
