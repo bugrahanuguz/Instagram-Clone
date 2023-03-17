@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/bottom_nav_bar.dart';
+import 'package:instagram_clone/components/profile_screen/profile.dart';
 import 'package:instagram_clone/view/discovery_screen.dart';
 
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
@@ -45,6 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return MyHomePage();
       case 1:
         return DiscoveryScreen();
+      case 4:
+        return ProfileScreen();
       default:
         return ProfileStoriesWidget();
     }
