@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/bottom_nav_bar.dart';
+import 'package:instagram_clone/components/profile_screen/profile.dart';
 import 'package:instagram_clone/view/discovery_screen.dart';
 import 'package:instagram_clone/view/profile_page.dart';
 
@@ -7,6 +8,7 @@ import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
 import '../components/discovery_appbar.dart';
+import '../components/profile_stories.dart';
 import '../components/timeline-appbar.dart';
 import 'home_page.dart';
 
@@ -48,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 4:
         return InstagramProfilePage();
       default:
-        return Container();
+        return ProfileStoriesWidget();
     }
   }
 }

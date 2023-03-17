@@ -6,8 +6,9 @@ class Horizontal_Listview extends StatelessWidget {
   final String? icon_path;
   final String? icon_name;
   final Widget? icon_myself;
+  final double? size;
   const Horizontal_Listview(
-      {super.key, this.icon_path, required this.icon_name, this.icon_myself});
+      {super.key, this.icon_path, required this.icon_name, this.icon_myself, this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class Horizontal_Listview extends StatelessWidget {
                 border: Border.all(color: Colors.red, width: 3)),
             child: ClipOval(
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.07,
+                height: size == null ? MediaQuery.of(context).size.height * 0.07 : MediaQuery.of(context).size.height * size!,
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
