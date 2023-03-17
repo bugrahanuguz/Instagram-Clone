@@ -19,7 +19,7 @@ class ProfileStoriesWidget extends StatelessWidget {
                   style: buttonStyle,
                   child: const Text(
                     "Profili Düzenle",
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(),
                   )),
             ),
             SizedBox(
@@ -29,7 +29,7 @@ class ProfileStoriesWidget extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(
                   "Profili paylaş",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(),
                 ),
               ),
             ),
