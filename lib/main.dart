@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
-
-import 'package:instagram_clone/view/discovery_screen.dart';
-
 import 'package:instagram_clone/app_init.dart';
-
-import 'package:instagram_clone/components/post_screen/posts.dart';
-import 'package:instagram_clone/components/timeline-appbar.dart';
-import 'package:instagram_clone/components/stories/stories.dart';
-import 'package:instagram_clone/view/home_page.dart';
 import 'package:instagram_clone/view_models/discovery_view_model.dart';
-
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:instagram_clone/view_models/profile_view_model.dart';
 import 'package:instagram_clone/view_models/timeline_view_model.dart';
 import 'package:provider/provider.dart';
-
-import 'app_init.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +20,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => HomePageViewModel()),
         ChangeNotifierProvider(create: (context) => TimelineViewModel()),
         ChangeNotifierProvider(create: (context) => DiscoveryViewModel()),
-        ChangeNotifierProvider(create: (context) => ProfileViewModel())
+        ChangeNotifierProvider(create: (context) => ProfileViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
