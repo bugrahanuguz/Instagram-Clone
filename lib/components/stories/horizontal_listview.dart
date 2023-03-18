@@ -8,7 +8,7 @@ class Horizontal_Listview extends StatelessWidget {
   final Widget? icon_myself;
   final double? size;
   const Horizontal_Listview(
-      {super.key, this.icon_path, required this.icon_name, this.icon_myself, this.size});
+      {super.key, this.icon_path, this.icon_name, this.icon_myself, this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,9 @@ class Horizontal_Listview extends StatelessWidget {
                 border: Border.all(color: Colors.red, width: 3)),
             child: ClipOval(
               child: Container(
-                height: size == null ? MediaQuery.of(context).size.height * 0.07 : MediaQuery.of(context).size.height * size!,
+                height: size == null
+                    ? MediaQuery.of(context).size.height * 0.07
+                    : MediaQuery.of(context).size.height * size!,
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
@@ -39,10 +41,11 @@ class Horizontal_Listview extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            icon_name!,
-            style: TextStyle(fontSize: 12, color: Colors.white),
-          ),
+          if (icon_name != null)
+            Text(
+              icon_name!,
+              style: TextStyle(fontSize: 12, color: Colors.white),
+            ),
         ],
       ),
     );
