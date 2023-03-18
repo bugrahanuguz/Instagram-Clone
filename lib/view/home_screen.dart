@@ -41,11 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return const TimelineAppbar();
       case 1:
-
         return const DiscoveryAppbar();
       // case 2:
       //   return const ShareScreenAppbar();
-
 
       case 4:
         return const ProfileAppbar();
@@ -61,15 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return DiscoveryScreen();
 
-     
-
       case 2:
         break;
-    
 
-     
       case 3:
+
          return ReelsPageView();
+
+   
+
 
       case 4:
         return ProfileScreenPage();
