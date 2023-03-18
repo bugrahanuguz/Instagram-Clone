@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/view/discovery_screen.dart';
+import 'package:instagram_clone/view/home_page.dart';
+import 'package:instagram_clone/components/profile_screen/profile_posts.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
+import '../view/share_screen.dart';
+
 class BottomNavBarWidget extends StatefulWidget {
-  BottomNavBarWidget({
+  const BottomNavBarWidget({
     super.key,
   });
 
@@ -28,7 +33,12 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
 
   Widget bottomIcon(String icon, int index) => GestureDetector(
         onTap: () {
-          context.read<HomePageViewModel>().setPage(index);
+          if (index == 2) {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ShareScreenPage()));
+          } else {
+            context.read<HomePageViewModel>().setPage(index);
+          }
         },
         child: Opacity(
           opacity: context.watch<HomePageViewModel>().page == index ? 1.0 : 0.7,
@@ -49,4 +59,5 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   ];
 }
 
+List<Widget> pages = [MyHomePage(), DiscoveryScreen(), InstagramProfilePage()];
 double size = 26;
