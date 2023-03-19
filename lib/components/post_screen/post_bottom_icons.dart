@@ -24,7 +24,11 @@ class PostIconBottom extends StatelessWidget {
               height: 5,
             ),
             Text(
-              text != null ? text.toString() : "",
+              text != null
+                  ? (text! >= 10000
+                      ? text.toString().substring(0, 2) + "K"
+                      : text.toString())
+                  : "",
               style: TextStyle(color: Colors.white),
             ),
           ],

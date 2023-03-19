@@ -2,6 +2,9 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:instagram_clone/components/reels_screen/reels_circle_person.dart';
+import 'package:instagram_clone/components/reels_screen/reels_circle_person_name.dart';
+import 'package:instagram_clone/components/reels_screen/reels_follow_button.dart';
 
 class ReelsPerson extends StatelessWidget {
   const ReelsPerson({super.key});
@@ -14,44 +17,12 @@ class ReelsPerson extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.04,
         child: Row(
           children: [
-            Container(
-              height: MediaQuery.of(context).size.height * 0.04,
-              width: MediaQuery.of(context).size.height * 0.04,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: Colors.red, width: 3)),
-              child: ClipOval(
-                child: Image.network(
-                  Faker().image.image(random: true),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            ReelsCirclePerson(),
             SizedBox(
               width: 5,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.2,
-              child: Text(
-                Faker().person.firstName(),
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.3,
-              height: MediaQuery.of(context).size.height * 0.035,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Follow',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            )
+            ReelsCirclePersonName(),
+            ReelsFollowButton(),
           ],
         ),
       ),
