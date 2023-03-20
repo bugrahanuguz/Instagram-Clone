@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/settings_screen/settings_screen.dart';
 
 class ProfileAppbar extends StatelessWidget implements PreferredSizeWidget {
   const ProfileAppbar({super.key});
@@ -27,9 +28,19 @@ class ProfileAppbar extends StatelessWidget implements PreferredSizeWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.07,
               ),
-              Image.asset(
-                'assets/icons/more.png',
-                width: MediaQuery.of(context).size.width * 0.05,
+              GestureDetector(
+                child: Image.asset(
+                  'assets/icons/more.png',
+                  width: MediaQuery.of(context).size.width * 0.05,
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingsScreen(),
+                    ),
+                  );
+                },
               ),
             ],
           ),
